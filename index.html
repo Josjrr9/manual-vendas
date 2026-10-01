@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
-/* ============ Tokens (estética escura: vazio preto, violeta de ação, âmbar de destaque) ============ */
 :root{
   --vazio:#FFFFFF; --fundo-2:#F5F6F9; --texto:#14213D; --cinza:#5B6474; --prata:#3E4758; --sutil:rgba(20,33,61,.06); --sutil-2:rgba(20,33,61,.11);
   --iris:#A67C2E; --acafrao:#8C6A28; --acao:#14213D; --acao-hover:#22345C; --verde:#15846E; --sobre-ouro:#FFFFFF;
@@ -22,8 +21,6 @@
   padding-top:env(safe-area-inset-top,0px);
   padding-bottom:env(safe-area-inset-bottom,0px);
 }
-/* A marca é escura nos dois modos do aparelho */
-/* Visual claro nos dois modos do aparelho (identidade da marca) */
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --vazio:#FFFFFF; --texto:#14213D; } }
 :root[data-theme="dark"]{ --vazio:#FFFFFF; --texto:#14213D; }
 *,*::before,*::after{box-sizing:inherit}
@@ -37,24 +34,18 @@ img{max-width:100%}
 :focus-visible{outline:2px solid var(--iris);outline-offset:3px}
 .wrap{max-width:1280px;margin:0 auto;padding-left:24px;padding-right:24px}
 .i{width:22px;height:22px;flex:none}
-
-/* ============ Tipografia ============ */
 .display{font-size:clamp(2.9rem,11.5vw,7.06rem);line-height:1;letter-spacing:-.02em}
 .titulo{font-size:clamp(2.5rem,8.4vw,4.875rem);line-height:1.02;letter-spacing:-.02em;max-width:14em}
 .titulo-sm{font-size:clamp(2rem,6vw,2.75rem);line-height:1.1;letter-spacing:-.01em}
 .rotulo{display:inline-block;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.025em;color:var(--acafrao)}
 .corpo{color:var(--prata);max-width:32em}
 .corpo strong{color:var(--texto);font-weight:400}
-
-/* ============ Botões ============ */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;background:var(--acao);color:var(--sobre-ouro);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.025em;padding:16px 26px;min-height:52px;cursor:pointer;text-decoration:none;transition:background .15s,transform .12s}
 .btn:hover{background:var(--acao-hover)}
 .btn:active{transform:scale(.98)}
 .btn.largo{width:100%}
 .fantasma{background:none;border:0;color:var(--cinza);font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.025em;cursor:pointer;padding:10px 4px;text-decoration:none}
 .fantasma:hover{color:var(--acao)}
-
-/* ============ Topo ============ */
 header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.96);box-shadow:0 1px 0 var(--sutil-2)}
 .barra{display:flex;align-items:center;gap:22px;min-height:72px}
 .logo{white-space:nowrap;display:flex;align-items:center;gap:10px;font-family:var(--serifa);font-weight:700;font-size:21px;letter-spacing:0;color:var(--texto);text-decoration:none}
@@ -64,8 +55,6 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 @media (min-width:900px){.barra .direita{margin-left:10px}}
 .barra .btn{min-height:44px;padding:12px 20px}
 @media (max-width:430px){.barra .btn{display:none}.logo{font-size:19px}}
-
-/* ============ Hero ============ */
 .hero{padding:40px 0 96px;background:linear-gradient(180deg,var(--fundo-2),#FFFFFF 80%)}
 .hero-grid{display:grid;gap:40px;align-items:center}
 @media (min-width:980px){.hero-grid{grid-template-columns:1.1fr .9fr;gap:56px}}
@@ -86,8 +75,6 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 .constelacao{position:relative;width:100%;aspect-ratio:1/0.95;max-height:640px}
 .constelacao canvas{position:absolute;inset:0;width:100%;height:100%}
 @media (max-width:979px){.constelacao{order:-1;aspect-ratio:1/0.55;max-height:220px;margin-bottom:-12px}.hero{padding-top:8px}}
-
-/* ============ Seções ============ */
 .secao{padding:96px 0}
 .secao.alt{background:var(--fundo-2)}
 @media (min-width:980px){.secao{padding:120px 0}}
@@ -95,24 +82,14 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 @media (min-width:980px){.duas{grid-template-columns:1fr 1fr;gap:80px;align-items:start}}
 .duas.centro{align-items:center}
 .secao .corpo{margin-top:24px}
-
-/* fatos */
 .fatos{display:grid;gap:40px}
 @media (min-width:860px){.fatos{grid-template-columns:repeat(3,1fr);gap:56px}}
 .fatos strong{display:block;font-weight:400;font-family:var(--serifa);font-size:clamp(2.4rem,6vw,3rem);letter-spacing:-.04em;line-height:1;color:var(--acafrao)}
 .fatos span{display:block;margin-top:12px;color:var(--prata)}
-
-/* dores */
 .citacao{font-family:var(--serifa);font-size:clamp(1.6rem,4.6vw,2.25rem);line-height:1.2;letter-spacing:-.03em;margin-top:30px}
 .lista-dor{list-style:none;padding:0;margin:0;display:grid;gap:26px}
 .lista-dor li{display:flex;gap:16px;align-items:flex-start;color:var(--prata);font-size:1.15rem}
 .lista-dor .i{width:20px;height:20px;color:var(--cinza);margin-top:5px}
-.numero-grande{margin-top:56px}
-.numero-grande strong{display:block;font-weight:400;font-family:var(--serifa);font-size:clamp(3rem,10vw,4.875rem);letter-spacing:-.04em;line-height:1;color:var(--acafrao)}
-.numero-grande p{margin-top:12px;color:var(--prata)}
-.numero-grande a{color:var(--cinza);font-size:14px}
-
-/* casos reais */
 .faixa-casos{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(270px,82%);gap:48px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:56px;padding-bottom:18px;scrollbar-width:thin;scrollbar-color:var(--iris) transparent}
 @media (min-width:860px){.faixa-casos{grid-auto-columns:calc((100% - 96px)/3)}}
 .caso-real{scroll-snap-align:start;display:flex;flex-direction:column}
@@ -128,25 +105,11 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 .cr-fonte .i{width:13px;height:13px}
 .cr-fonte:hover{color:var(--texto)}
 .aviso{margin-top:28px;font-size:14px;color:var(--cinza);max-width:56em}
-
-/* em comum */
-.lista-num{list-style:none;padding:0;margin:0;display:grid;gap:36px;counter-reset:n}
-.lista-num li{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:start}
-.lista-num li::before{counter-increment:n;content:counter(n,upper-roman);font-family:var(--serifa);font-size:3rem;letter-spacing:-.04em;line-height:1;color:var(--iris)}
-.lista-num strong{display:block;font-weight:400;font-family:var(--serifa);font-size:1.5rem;letter-spacing:-.02em}
-.lista-num span{display:block;color:var(--prata);margin-top:6px}
-.ponte{margin-top:28px;color:var(--prata)}
-.ponte strong{color:var(--acafrao);font-weight:400}
-
-/* o que é / não é */
 .lista-sn{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:18px}
 .lista-sn li{display:flex;gap:14px;align-items:flex-start;color:var(--prata)}
 .lista-sn .i{width:20px;height:20px;margin-top:4px}
 .lista-sn.sim .i{color:var(--iris)}
 .lista-sn.nao .i{color:var(--cinza)}
-.nota-lei{margin-top:48px;color:var(--cinza);font-size:15px;max-width:52em}
-
-/* como funciona */
 .passos{list-style:none;padding:0;margin:48px 0 0;display:grid;gap:44px;counter-reset:p}
 .passos li{display:grid;grid-template-columns:72px 1fr;gap:12px}
 .passos li::before{counter-increment:p;content:counter(p,upper-roman);font-family:var(--serifa);font-size:3rem;letter-spacing:-.04em;line-height:1;color:var(--acafrao)}
@@ -167,27 +130,19 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 .cel-linha b{font-weight:600;background:linear-gradient(transparent 58%,#EFD9A6 58%)}
 .cel-prox{background:#F3EAD6;border-radius:12px;padding:10px 12px;font-size:12.5px;margin-top:6px}
 .cel-prox small{display:block;color:#8A6A2E;font-weight:600;font-size:11px}
-
-/* benefícios */
 .beneficios{list-style:none;padding:0;margin:56px 0 0;display:grid;gap:44px}
 @media (min-width:700px){.beneficios{grid-template-columns:1fr 1fr}}
 @media (min-width:1040px){.beneficios{grid-template-columns:repeat(3,1fr);gap:56px}}
 .beneficios .i{width:28px;height:28px;color:var(--iris)}
 .beneficios strong{display:block;font-weight:400;font-family:var(--serifa);font-size:1.5rem;letter-spacing:-.02em;margin-top:16px}
 .beneficios span{display:block;color:var(--prata);margin-top:8px}
-
-/* preço */
 .valor{font-family:var(--serifa);font-size:clamp(4rem,16vw,7.06rem);letter-spacing:-.04em;line-height:1;margin-top:22px}
 .valor em{font-style:normal;font-size:1.2rem;letter-spacing:0;color:var(--cinza)}
 .inclui{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:14px}
 .inclui li{display:flex;gap:12px;align-items:flex-start;color:var(--prata)}
 .inclui .i{width:20px;height:20px;color:var(--iris);margin-top:4px}
-.garantia-num{font-family:var(--serifa);font-size:clamp(3rem,10vw,4.875rem);letter-spacing:-.04em;line-height:1;color:var(--acafrao)}
 .garantia h3{font-size:1.6rem;letter-spacing:-.02em;margin-top:14px}
 .garantia p{color:var(--prata);margin-top:12px}
-.garantia .btn{margin-top:32px}
-
-/* faq */
 .faqs{margin-top:48px;display:grid;gap:0;max-width:900px;border-top:1px solid var(--sutil-2)}
 .faq{border-bottom:1px solid var(--sutil-2)}
 .faq summary{list-style:none;font-family:var(--serifa);cursor:pointer;display:flex;justify-content:space-between;gap:24px;padding:18px 0;font-size:clamp(1.2rem,3.4vw,1.5rem);letter-spacing:-.02em}
@@ -196,25 +151,18 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 .faq[open] summary::after{content:"\2013"}
 .faq summary:hover{color:var(--iris)}
 .faq p{color:var(--prata);padding:0 0 22px;max-width:46em}
-
-/* final */
 .final{padding:120px 0 96px;text-align:center;background:var(--fundo-2)}
 .final .titulo{margin:0 auto}
 .final .corpo{margin:24px auto 0}
-.final .tags{justify-content:center;margin-top:36px}
 .rodape{padding:48px 0 120px;color:var(--cinza);font-size:14px}
 .rodape p + p{margin-top:12px}
 .rodape button{background:none;border:0;padding:0;color:var(--acao);cursor:pointer;font-size:14px;text-decoration:underline}
-
-/* barra fixa no celular */
 .barra-fixa{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#FFFFFF;box-shadow:0 -6px 20px rgba(20,33,61,.1);padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s}
 .barra-fixa.on{transform:none}
 .barra-fixa div{font-size:13px;color:var(--cinza);line-height:1.3}
 .barra-fixa div b{display:block;color:var(--texto);font-family:var(--serifa);font-weight:600;font-size:20px}
-.barra-fixa .btn{margin-left:auto;min-height:46px;padding:12px 20px}
+.barra-fixa .btn{margin-left:auto;min-height:46px;padding:12px 20px;white-space:nowrap}
 @media (min-width:980px){.barra-fixa{display:none}}
-
-/* cookies e privacidade */
 .cookies{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#FFFFFF;box-shadow:0 -8px 24px rgba(20,33,61,.14);padding:18px 0 calc(18px + env(safe-area-inset-bottom,0px))}
 .cookies p{margin:0 0 12px;font-size:15px;color:var(--prata)}
 .cookies .texto-btn{background:none;border:0;padding:0;color:var(--acao);font-size:15px;text-decoration:underline;cursor:pointer}
@@ -229,8 +177,6 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 .politica .texto-btn{background:none;border:0;padding:0;color:var(--texto);text-decoration:underline;cursor:pointer}
 .politica .botoes{margin-top:36px}
 .politica .btn.sec{background:var(--sutil-2);color:var(--texto)}
-
-/* botão principal em destaque */
 .btn.assinar{background:#C9A45C;color:#14213D;font-size:16px;letter-spacing:.04em;min-height:62px;padding:18px 34px;box-shadow:0 12px 26px -10px rgba(166,124,46,.75)}
 .btn.assinar:hover{background:#D6B571}
 .btn{white-space:nowrap}
@@ -243,8 +189,6 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 .cta-secao small{color:var(--cinza);font-size:15px}
 .cta-secao small b{color:var(--texto);font-weight:600}
 .tag.limpar{background:transparent;color:var(--cinza);text-decoration:underline;padding-left:14px}
-
-/* preço de lançamento e contagem regressiva */
 .faixa-promo{background:#14213D;color:#FFFFFF;font-size:14px}
 .faixa-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 16px;min-height:44px;padding-top:8px;padding-bottom:8px;text-align:center}
 .faixa-in b{font-weight:600}
@@ -252,7 +196,6 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 .btn.mini{min-height:34px;padding:6px 16px;font-size:12px;background:#C9A45C;color:#14213D}
 .btn.mini:hover{background:#D8B878}
 @media (max-width:600px){.faixa-promo .btn.mini{display:none}.faixa-in{font-size:12.5px;gap:2px 10px;min-height:0}}
-.barra-fixa .btn{white-space:nowrap}
 .hero-assinar{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:34px}
 .hero-assinar small{color:var(--cinza);font-size:15px}
 .hero-assinar small b{color:var(--texto);font-weight:600}
@@ -264,8 +207,6 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 .depois{margin-top:10px;color:var(--cinza)}
 .depois b{color:var(--texto);font-weight:600}
 .selo-lancamento{display:inline-block;background:#F3EAD6;color:#8C6A28;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;margin-top:18px}
-
-/* histórias de exemplo e depoimentos */
 .selo-ficticio{display:inline-block;margin-top:16px;background:#F3EAD6;color:#6E5320;border-radius:10px;padding:8px 14px;font-size:14px;font-weight:600}
 .historias{display:grid;gap:20px;margin-top:40px}
 @media (min-width:900px){.historias{grid-template-columns:repeat(3,1fr)}}
@@ -288,9 +229,7 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 .depo blockquote{margin:0;font-family:var(--serifa);font-size:1.35rem;line-height:1.35}
 .depo figcaption{margin-top:16px;font-size:14px;color:var(--cinza)}
 .depo figcaption strong{display:block;color:var(--texto);font-weight:600;font-size:15px}
-
-/* notificações */
-.toast{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;gap:12px;align-items:flex-start;max-width:min(380px,calc(100vw - 32px));background:#FFFFFF;border-radius:16px;padding:14px 14px 14px 14px;box-shadow:0 18px 40px -12px rgba(20,33,61,.35),0 0 0 1px rgba(20,33,61,.06);transform:translateY(20px);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+.toast{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;gap:12px;align-items:flex-start;max-width:min(380px,calc(100vw - 32px));background:#FFFFFF;border-radius:16px;padding:14px;box-shadow:0 18px 40px -12px rgba(20,33,61,.35),0 0 0 1px rgba(20,33,61,.06);transform:translateY(20px);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
 .toast.on{opacity:1;transform:none;pointer-events:auto}
 .toast-ic{flex:none;width:38px;height:38px;border-radius:12px;background:#F3EAD6;color:#8C6A28;display:grid;place-items:center}
 .toast-ic .i{width:20px;height:20px}
@@ -300,8 +239,6 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 .toast-x .i{width:16px;height:16px}
 @media (max-width:979px){.toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}}
 @media (prefers-reduced-motion:reduce){.toast{transition:none}}
-
-/* ilustrações jurídicas */
 .arte{color:var(--iris);width:100%;max-width:420px}
 .arte svg{width:100%;height:auto;display:block}
 .arte.pequena{max-width:260px}
@@ -313,7 +250,6 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 .filete::before,.filete::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,164,92,.45),transparent)}
 .filete svg{width:28px;height:28px}
 .selo-garantia{width:150px;height:150px;color:var(--iris)}
-
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.barra-fixa,.tag{transition:none}}
 </style>
 </head>
@@ -322,18 +258,15 @@ header.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 <main id="app"></main>
 <div class="barra-fixa" id="barra-fixa" aria-hidden="true"></div>
 <script>
-/* ============================================================
-   PÁGINA DE VENDAS — Manual do Consumidor
-   Os anúncios apontam para cá. Todos os botões levam ao pagamento na Kiwify.
-   O acesso ao portal é enviado pela Kiwify depois da compra.
-   ============================================================ */
+/* PÁGINA DE VENDAS — Manual do Consumidor
+   Todos os botões levam ao pagamento na Kiwify. O acesso ao portal é enviado pela Kiwify depois da compra. */
 
 /* ====== CONFIGURAÇÃO ====== */
-const PRECO = 'R$ 29,90';        // preço de lançamento (pagamento único, acesso vitalício)
-const PRECO_DEPOIS = 'R$ 140,90'; // preço único que você VAI cobrar depois do lançamento
-const FIM_PROMOCAO = '2026-10-31T23:59:59-03:00'; // data REAL do fim do preço de lançamento
-const LINK_CHECKOUT = 'https://pay.kiwify.com.br/3v1p0vY';  // cole aqui o link de pagamento (ex.: 'https://...')
-const SM = 1621;                  // salário mínimo 2026 — atualize todo ano
+const PRECO = 'R$ 29,90';
+const PRECO_DEPOIS = 'R$ 140,90';
+const FIM_PROMOCAO = '2026-10-31T23:59:59-03:00';
+const LINK_CHECKOUT = 'https://pay.kiwify.com.br/3v1p0vY';
+const SM = 1621;
 const LIM20 = SM * 20;
 const LIM40 = SM * 40;
 
@@ -346,12 +279,10 @@ const CASOS = {
   servico:{titulo:'Serviço mal prestado'}
 };
 
-/* ====== AJUDANTES ====== */
 const $ = id => document.getElementById(id);
 const esc = t => String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const brl = n => n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 let tela = 'inicio';
-
 
 /* ====== ÍCONES ====== */
 const svg = d => `<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
@@ -362,35 +293,20 @@ const IC = {
   produto: svg('<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>'),
   entrega: svg('<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/><path d="m7.5 4.2 9 5.2"/>'),
   servico: svg('<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>'),
-  balanca: svg('<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>'),
-  voltar: svg('<path d="m15 18-6-6 6-6"/>'),
   sim: svg('<path d="M20 6 9 17l-5-5"/>'),
   nao: svg('<path d="M18 6 6 18"/><path d="m6 6 12 12"/>'),
-  ns: svg('<path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>'),
-  lixo: svg('<path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>'),
-  cadeado: svg('<rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>'),
   externo: svg('<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>'),
   busca: svg('<circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>'),
   relogio: svg('<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>'),
   pessoa: svg('<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>'),
   lista: svg('<path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/>'),
   mensagem: svg('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>'),
-  documento: svg('<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/>'),
-  ponto: svg('<circle cx="12" cy="12" r="3.5"/>')
-};
-const CURTO = {
-  negativacao:'Serasa, SPC ou Boa Vista sem motivo',
-  cobranca:'Algo que você não contratou ou já cancelou',
-  voo:'Atraso, cancelamento ou mala',
-  produto:'Quebrou e ninguém resolve',
-  entrega:'Pagou e não chegou',
-  servico:'Internet, luz, água ou telefone'
+  documento: svg('<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/>')
 };
 
-/* ====== ANÚNCIOS: PÁGINAS POR PROBLEMA, PIXEL E COOKIES ====== */
-// Cole aqui os códigos das plataformas de anúncio (deixe vazio se não usar)
-const META_PIXEL_ID = '1426430686342097';   // ex.: '123456789012345'
-const GOOGLE_TAG_ID = '';   // ex.: 'AW-123456789' ou 'G-XXXXXXX'
+/* ====== PIXEL, COOKIES E PRIVACIDADE ====== */
+const META_PIXEL_ID = '1426430686342097';
+const GOOGLE_TAG_ID = '';
 const EMPRESA_NOME  = '[seu nome ou nome da empresa, com CNPJ se tiver]';
 const EMAIL_CONTATO = '[seu e-mail de contato]';
 
@@ -411,6 +327,7 @@ const LP = {
     fatos:[['Desconto','proporcional dos dias sem serviço pode ser exigido na fatura.'],['Aviso prévio','é obrigatório antes de cortar o serviço por falta de pagamento.'],['1331','é o telefone gratuito da Anatel para reclamar de operadora.']]}
 };
 
+let casoAtual = casoAnuncio;
 
 function paginaAnuncio(){
   const padrao={caso:null,titulo:'Entenda seus direitos e saiba o que fazer.',
@@ -420,10 +337,8 @@ function paginaAnuncio(){
   return v?Object.assign({},padrao,v,{caso:casoAtual}):padrao;
 }
 
-// ---- Cookies e medição de anúncios (LGPD) ----
 function escolhaCookies(){ try{ return localStorage.getItem('jpp-cookies'); }catch(e){ return null; } }
 function temPixel(){ return !!(META_PIXEL_ID||GOOGLE_TAG_ID); }
-
 function carregarPixels(){
   if(META_PIXEL_ID&&!window.fbq){
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
@@ -435,17 +350,13 @@ function carregarPixels(){
     gtag('js',new Date()); gtag('config',GOOGLE_TAG_ID);
   }
 }
-
-// Eventos: 'caso' = começou um caso, 'checkout' = foi pagar, 'assinatura' = pagamento confirmado
 function rastrear(evento,dados){
   if(escolhaCookies()!=='sim') return;
-  const meta={caso:'Lead',checkout:'InitiateCheckout',assinatura:'Subscribe'}[evento];
-  const google={caso:'generate_lead',checkout:'begin_checkout',assinatura:'purchase'}[evento];
+  const meta={checkout:'InitiateCheckout'}[evento];
+  const google={checkout:'begin_checkout'}[evento];
   try{ if(window.fbq&&meta) fbq('track',meta,dados||{}); }catch(e){}
   try{ if(window.gtag&&google) gtag('event',google,dados||{}); }catch(e){}
 }
-const casosRastreados=new Set();
-
 function prepararCookies(){
   const lp=paginaAnuncio(); if(lp.caso) document.title=lp.titulo+' | Manual do Consumidor';
   if(!temPixel()) return;
@@ -462,26 +373,24 @@ function decidirCookies(v){
   const d=$('aviso-cookies'); if(d) d.remove();
   if(v==='sim') carregarPixels();
 }
-
 let telaAntesPrivacidade='inicio';
 function abrirPrivacidade(){ if(tela!=='privacidade') telaAntesPrivacidade=tela; tela='privacidade'; render(); window.scrollTo(0,0); }
 function fecharPrivacidade(){ tela=telaAntesPrivacidade; render(); window.scrollTo(0,0); }
-
 function telaPrivacidade(){
-  return `<div class="wrap tela estreita politica">
+  return `<div class="wrap politica">
     <h1 class="tela-titulo">Política de privacidade</h1>
     <p class="dica">Como o Manual do Consumidor trata os seus dados, de acordo com a Lei Geral de Proteção de Dados (Lei 13.709/2018).</p>
     <h2>Quem é o responsável</h2><p>${esc(EMPRESA_NOME)}. Contato: ${esc(EMAIL_CONTATO)}.</p>
-    <h2>Quais dados coletamos</h2><p>Nome e e-mail do cadastro; as respostas, valores e textos que você informa nos seus casos; e, só se você aceitar os cookies, dados de navegação usados para medir os anúncios.</p>
-    <h2>Para que usamos</h2><p>Para montar o seu guia, o plano e os modelos de texto, manter sua conta e seu acesso, e medir quais anúncios funcionam. Não vendemos seus dados.</p>
-    <h2>Com quem compartilhamos</h2><p>Com os serviços que fazem o app funcionar (hospedagem, banco de dados e pagamento) e, se você aceitar os cookies, com as plataformas de anúncio (Meta e Google), apenas para medição.</p>
+    <h2>Quais dados coletamos</h2><p>Nesta página, só coletamos dados de navegação usados para medir os anúncios, e apenas se você aceitar os cookies. Os dados de pagamento são tratados pela Kiwify.</p>
+    <h2>Para que usamos</h2><p>Para medir quais anúncios funcionam. Não vendemos seus dados.</p>
+    <h2>Com quem compartilhamos</h2><p>Com os serviços que fazem o site funcionar (hospedagem e pagamento) e, se você aceitar os cookies, com as plataformas de anúncio (Meta e Google), apenas para medição.</p>
     <h2>Seus direitos</h2><p>Você pode pedir a qualquer momento acesso, correção ou exclusão dos seus dados, e retirar o consentimento dos cookies (art. 18 da LGPD). Basta escrever para ${esc(EMAIL_CONTATO)}.</p>
     <h2>Cookies</h2><p>Os cookies de medição só são ativados se você aceitar. <button class="texto-btn" onclick="try{localStorage.removeItem('jpp-cookies')}catch(e){};location.reload()">Mudar minha escolha</button></p>
     <div class="botoes"><button class="btn sec largo" onclick="fecharPrivacidade()">Voltar</button></div>
   </div>`;
 }
 
-/* ====== PÁGINA ====== */
+/* ====== CONTEÚDO ====== */
 const CHIP = {
   negativacao:'Nome negativado', cobranca:'Cobrança indevida', voo:'Voo com problema',
   produto:'Produto com defeito', entrega:'Compra não chegou', servico:'Internet, luz ou água'
@@ -493,8 +402,6 @@ const DORES_GERAIS = [
   'Tem medo de perder o prazo e ficar sem o seu direito.',
   'Não entende a linguagem das leis e dos processos.'
 ];
-
-/* ====== CASOS REAIS (decisões publicadas por tribunais e jornais) ====== */
 const CASOS_REAIS = [
   {licao:'Problema técnico no avião não livra a companhia da responsabilidade.',k:'voo',valor:'R$ 15 mil',desc:'em danos morais para 3 passageiros (R$ 5 mil cada), mais R$ 2.668 de prejuízos',local:'Justiça de São Paulo',data:'set/2026',
    fato:'O voo para Istambul voltou após decolar por um problema técnico e foi cancelado. Os passageiros chegaram com mais de 30 horas de atraso.',
@@ -522,51 +429,21 @@ const CASOS_REAIS = [
    fez:'Guardou a confirmação do banco de que não havia mais pendências no nome dele.',fonte:'Conjur',url:'https://conjur.com.br/2026-mai-30/negativacao-de-nome-depois-de-renegociacao-de-divida-gera-indenizacao/'}
 ];
 
-
-
-/* ====== ILUSTRAÇÕES JURÍDICAS (desenhadas em linha dourada) ====== */
+/* ====== ILUSTRAÇÕES ====== */
 const ARTE = {
   balanca:`<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 8v44"/><circle cx="32" cy="7" r="2.5"/><path d="M12 16h40"/><path d="M12 16 5 34M12 16l7 18M52 16l-7 18M52 16l7 18"/><path d="M4 34a8 5 0 0 0 16 0Z"/><path d="M44 34a8 5 0 0 0 16 0Z"/><path d="M22 56h20M26 52h12"/></svg>`,
-  martelo:`<svg viewBox="0 0 260 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <g transform="rotate(-32 120 78)"><rect x="72" y="52" width="96" height="46" rx="8"/><rect x="62" y="58" width="12" height="34" rx="4"/><rect x="166" y="58" width="12" height="34" rx="4"/><path d="M92 52v46M148 52v46"/><rect x="114" y="98" width="12" height="96" rx="6"/></g>
-    <path d="M150 172h92l-6 14h-80z"/><rect x="164" y="158" width="64" height="14" rx="4"/>
-    <path d="M150 128l-10-8M168 116l-2-12M186 124l8-8" opacity=".6"/></svg>`,
-  tribunal:`<svg viewBox="0 0 260 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M22 70 130 18l108 52z"/><circle cx="130" cy="50" r="10"/><path d="M130 44v12M124 50h12" opacity=".7"/>
-    <path d="M18 78h224M26 86h208"/>
-    ${[46,86,126,166,206].map(x=>`<path d="M${x-9} 92h18M${x-7} 92v74M${x+7} 92v74M${x-9} 166h18M${x-3} 96v66M${x+3} 96v66" />`).join('')}
-    <path d="M22 172h216M14 180h232M6 188h248"/></svg>`,
-  livro:`<svg viewBox="0 0 260 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M130 44c-26-14-68-16-104-6v136c36-10 78-8 104 6z"/><path d="M130 44c26-14 68-16 104-6v136c-36-10-78-8-104 6z"/>
-    <path d="M130 44v136"/><path d="M178 30v44l10-8 10 8V32" />
-    <text x="78" y="84" text-anchor="middle" fill="currentColor" stroke="none" font-family="Cormorant Garamond, Georgia, serif" font-size="30" font-weight="700">CDC</text>
-    <text x="78" y="104" text-anchor="middle" fill="currentColor" stroke="none" font-family="Inter, sans-serif" font-size="9" letter-spacing="1">LEI 8.078/1990</text>
-    ${[118,130,142,154].map(y=>`<path d="M44 ${y}c22-5 44-4 68 2" opacity=".55"/>`).join('')}
-    ${[70,82,94,106,118,130,142,154].map(y=>`<path d="M148 ${y+2}c24-6 46-7 68-2" opacity=".55"/>`).join('')}
-    <text x="182" y="62" text-anchor="middle" fill="currentColor" stroke="none" font-family="Cormorant Garamond, Georgia, serif" font-size="22" opacity=".9">§</text></svg>`,
-  documentos:`<svg viewBox="0 0 260 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <path d="M58 30h110l28 28v126H58z" opacity=".45" transform="rotate(-6 126 110)"/>
-    <path d="M70 22h110l28 28v130H70z"/><path d="M180 22v28h28"/>
-    ${[70,84,98,112,126].map((y,i)=>`<path d="M90 ${y}h${i%2?78:96}" opacity=".6"/>`).join('')}
-    <g transform="rotate(-12 150 150)"><rect x="104" y="132" width="104" height="38" rx="4"/><rect x="100" y="128" width="112" height="46" rx="6" opacity=".5"/>
-    <text x="156" y="157" text-anchor="middle" fill="currentColor" stroke="none" font-family="Inter, sans-serif" font-size="13" font-weight="600" letter-spacing="2">PROTOCOLO</text></g></svg>`,
-  selo:`<svg viewBox="0 0 160 160" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-    <circle cx="80" cy="80" r="74"/><circle cx="80" cy="80" r="64" stroke-dasharray="2 5"/>
-    <text x="80" y="76" text-anchor="middle" fill="currentColor" stroke="none" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="700">7</text>
-    <text x="80" y="98" text-anchor="middle" fill="currentColor" stroke="none" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="2">DIAS DE</text>
-    <text x="80" y="112" text-anchor="middle" fill="currentColor" stroke="none" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="2">GARANTIA</text>
-    <text x="80" y="134" text-anchor="middle" fill="currentColor" stroke="none" font-family="Inter, sans-serif" font-size="8" letter-spacing="1">ART. 49 · CDC</text></svg>`
+  martelo:`<svg viewBox="0 0 260 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><g transform="rotate(-32 120 78)"><rect x="72" y="52" width="96" height="46" rx="8"/><rect x="62" y="58" width="12" height="34" rx="4"/><rect x="166" y="58" width="12" height="34" rx="4"/><path d="M92 52v46M148 52v46"/><rect x="114" y="98" width="12" height="96" rx="6"/></g><path d="M150 172h92l-6 14h-80z"/><rect x="164" y="158" width="64" height="14" rx="4"/><path d="M150 128l-10-8M168 116l-2-12M186 124l8-8" opacity=".6"/></svg>`,
+  tribunal:`<svg viewBox="0 0 260 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 70 130 18l108 52z"/><circle cx="130" cy="50" r="10"/><path d="M130 44v12M124 50h12" opacity=".7"/><path d="M18 78h224M26 86h208"/>${[46,86,126,166,206].map(x=>`<path d="M${x-9} 92h18M${x-7} 92v74M${x+7} 92v74M${x-9} 166h18M${x-3} 96v66M${x+3} 96v66"/>`).join('')}<path d="M22 172h216M14 180h232M6 188h248"/></svg>`,
+  livro:`<svg viewBox="0 0 260 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M130 44c-26-14-68-16-104-6v136c36-10 78-8 104 6z"/><path d="M130 44c26-14 68-16 104-6v136c-36-10-78-8-104 6z"/><path d="M130 44v136"/><path d="M178 30v44l10-8 10 8V32"/><text x="78" y="84" text-anchor="middle" fill="currentColor" stroke="none" font-family="Cormorant Garamond, Georgia, serif" font-size="30" font-weight="700">CDC</text><text x="78" y="104" text-anchor="middle" fill="currentColor" stroke="none" font-family="Inter, sans-serif" font-size="9" letter-spacing="1">LEI 8.078/1990</text>${[118,130,142,154].map(y=>`<path d="M44 ${y}c22-5 44-4 68 2" opacity=".55"/>`).join('')}${[70,82,94,106,118,130,142,154].map(y=>`<path d="M148 ${y+2}c24-6 46-7 68-2" opacity=".55"/>`).join('')}<text x="182" y="62" text-anchor="middle" fill="currentColor" stroke="none" font-family="Cormorant Garamond, Georgia, serif" font-size="22" opacity=".9">§</text></svg>`,
+  documentos:`<svg viewBox="0 0 260 200" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M58 30h110l28 28v126H58z" opacity=".45" transform="rotate(-6 126 110)"/><path d="M70 22h110l28 28v130H70z"/><path d="M180 22v28h28"/>${[70,84,98,112,126].map((y,i)=>`<path d="M90 ${y}h${i%2?78:96}" opacity=".6"/>`).join('')}<g transform="rotate(-12 150 150)"><rect x="104" y="132" width="104" height="38" rx="4"/><rect x="100" y="128" width="112" height="46" rx="6" opacity=".5"/><text x="156" y="157" text-anchor="middle" fill="currentColor" stroke="none" font-family="Inter, sans-serif" font-size="13" font-weight="600" letter-spacing="2">PROTOCOLO</text></g></svg>`,
+  selo:`<svg viewBox="0 0 160 160" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="80" cy="80" r="74"/><circle cx="80" cy="80" r="64" stroke-dasharray="2 5"/><text x="80" y="76" text-anchor="middle" fill="currentColor" stroke="none" font-family="Cormorant Garamond, Georgia, serif" font-size="46" font-weight="700">7</text><text x="80" y="98" text-anchor="middle" fill="currentColor" stroke="none" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="2">DIAS DE</text><text x="80" y="112" text-anchor="middle" fill="currentColor" stroke="none" font-family="Inter, sans-serif" font-size="10" font-weight="600" letter-spacing="2">GARANTIA</text><text x="80" y="134" text-anchor="middle" fill="currentColor" stroke="none" font-family="Inter, sans-serif" font-size="8" letter-spacing="1">ART. 49 · CDC</text></svg>`
 };
 const filete = () => `<div class="filete" aria-hidden="true">${ARTE.balanca}</div>`;
 
-
-/* ====== PREÇO DE LANÇAMENTO E CONTAGEM REGRESSIVA ======
-   A contagem vai até uma data REAL (FIM_PROMOCAO), igual para todo mundo.
-   Quando a data passa, a página mostra sozinha o preço normal (PRECO_DEPOIS). */
+/* ====== PREÇO, PAGAMENTO E CONTAGEM ====== */
 function promoAtiva(){ return Date.now() < new Date(FIM_PROMOCAO).getTime(); }
 function precoAtual(){ return promoAtiva() ? PRECO : PRECO_DEPOIS; }
 function dataFimPromo(){ const [a,m,d]=FIM_PROMOCAO.slice(0,10).split('-'); return `${d}/${m}/${a}`; }
-// Monta o link de pagamento levando junto as marcações dos anúncios (utm, src, sck)
 function linkPagamento(){
   const u=new URL(LINK_CHECKOUT); const atual=new URLSearchParams(location.search);
   atual.forEach((v,k)=>{ if(/^(utm_|src$|sck$|fbclid$|gclid$)/.test(k)) u.searchParams.set(k,v); });
@@ -577,17 +454,15 @@ function abrirPagamento(){
   if(window.self!==window.top) window.open(u,'_blank','noopener'); else location.href=u;
 }
 function assinar(){
-  const lp=paginaAnuncio(); rastrear('checkout',{value:29.90,currency:'BRL'});
-  if(LINK_CHECKOUT) abrirPagamento();                            // página de pagamento (Kiwify)
+  rastrear('checkout',{value:29.90,currency:'BRL'});
+  if(LINK_CHECKOUT) abrirPagamento();
 }
-let casoAtual = casoAnuncio;
 function escolherProblema(k){
   casoAtual = (k&&LP[k]) ? k : null;
   const url = location.pathname + (casoAtual?`?caso=${casoAtual}`:'');
   try{ history.replaceState(null,'',url); }catch(e){}
   const y=window.scrollY; render(); window.scrollTo(0,y);
 }
-
 function faixaPromo(){
   if(!promoAtiva()) return '';
   return `<div class="faixa-promo"><div class="wrap faixa-in">
@@ -619,9 +494,7 @@ function ligarContagem(){
   if(promoAtiva()){ atualizarContagem(); timerPromo=setInterval(atualizarContagem,1000); }
 }
 
-
-/* ====== HISTÓRIAS DE EXEMPLO (fictícias, rotuladas) E DEPOIMENTOS REAIS ====== */
-// Exemplos ilustrativos: personagens fictícios, mostram COMO o manual é usado (sem prometer resultado).
+/* ====== HISTÓRIAS (fictícias, rotuladas) E DEPOIMENTOS REAIS ====== */
 const HISTORIAS = [
   {nome:'Gabriel', k:'voo', aconteceu:'O voo dele foi cancelado na véspera de uma entrevista de emprego, e a companhia só ofereceu outro voo para dois dias depois.',
    mostrou:'Que, com o cancelamento, quem escolhe é o passageiro: outro voo, reembolso integral ou outro transporte. E que a companhia deve dar alimentação e hotel enquanto ele espera.',
@@ -633,13 +506,10 @@ const HISTORIAS = [
    mostrou:'Que ele pode pedir desconto proporcional dos dias sem serviço e reclamar na Anatel pelo 1331, informando o protocolo.',
    fez:['Anotou cada protocolo e fez testes de velocidade','Enviou o modelo de mensagem pedindo o desconto','Reclamou na Anatel com os protocolos em mãos']}
 ];
-
-// Depoimentos REAIS: preencha só com pessoas que usaram o manual e autorizaram (nome, cidade e texto delas).
-// Enquanto a lista estiver vazia, a seção não aparece no site.
+// Depoimentos REAIS (com autorização). Enquanto vazio, a seção não aparece.
 const DEPOIMENTOS = [
-  // {nome:'Nome Sobrenome', cidade:'Cidade/UF', problema:'Voo cancelado', texto:'O que a pessoa escreveu, com as palavras dela.'},
+  // {nome:'Nome Sobrenome', cidade:'Cidade/UF', problema:'Voo cancelado', texto:'O que a pessoa escreveu.'},
 ];
-
 function blocoHistorias(){
   const cards=HISTORIAS.map(x=>`<article class="historia">
       <div class="hist-topo"><span class="avatar" aria-hidden="true">${x.nome[0]}</span><div><strong>${esc(x.nome)}</strong><span>${IC[x.k]}${esc(CHIP[x.k])}</span></div></div>
@@ -656,7 +526,6 @@ function blocoHistorias(){
       <div class="historias">${cards}</div>
     </div></section>`;
 }
-
 function blocoDepoimentos(){
   if(!DEPOIMENTOS.length) return '';
   return `<section class="secao" id="depoimentos"><div class="wrap">
@@ -667,40 +536,28 @@ function blocoDepoimentos(){
     </div></section>`;
 }
 
-
-/* ====== NOTIFICAÇÕES NA TELA ======
-   1) Avisos verdadeiros (prazo da promoção, garantia, novidades da lei).
-   2) Compras REAIS: quando FONTE_COMPRAS_REAIS tiver um endereço que devolve a lista de vendas aprovadas,
-      elas aparecem aqui ("Maria, de Campinas, garantiu acesso há 5 min"). Nunca invente compras. */
-const FONTE_COMPRAS_REAIS = '';   // ex.: endereço que lista as vendas da Kiwify (será ligado na etapa do webhook)
-// Vendas aprovadas que você copia do painel da Kiwify (primeiro nome, cidade, data e hora da compra).
-// Use só vendas reais e, de preferência, com autorização do comprador.
+/* ====== NOTIFICAÇÕES (só avisos verdadeiros e vendas reais) ====== */
 const COMPRAS_REAIS = [
   // {nome:'Maria', cidade:'Campinas/SP', quando:'2026-10-02T14:35:00-03:00'},
 ];
-let comprasReais = [...COMPRAS_REAIS];
 function avisosVerdadeiros(){
   const lista=[];
   if(promoAtiva()) lista.push([IC.relogio,'Preço de lançamento',`Acesso vitalício por ${PRECO} até ${dataFimPromo()}. Depois, ${PRECO_DEPOIS}.`]);
   lista.push([IC.sim,'Garantia de 7 dias','Se desistir em até 7 dias, você recebe 100% do valor de volta.']);
   lista.push([IC.documento,'Novidade na lei','A Resolução 813 da Anac muda as regras de atraso e cancelamento de voos a partir de 26/10/2026.']);
   lista.push([IC.busca,'Você não está sozinho','2,8 milhões de reclamações no Consumidor.gov.br de janeiro a agosto de 2026.']);
-  lista.push([IC.lista,'Pagamento único','Sem mensalidade: você paga uma vez e o acesso fica na sua conta.']);
+  lista.push([IC.lista,'Pagamento único','Sem mensalidade: você paga uma vez e o acesso é seu.']);
   return lista;
 }
 function tempoAtras(iso){
   const m=Math.max(1,Math.round((Date.now()-new Date(iso).getTime())/60000));
   return m<60?`há ${m} min`:m<1440?`há ${Math.round(m/60)} h`:`há ${Math.round(m/1440)} dia(s)`;
 }
-async function carregarComprasReais(){
-  if(!FONTE_COMPRAS_REAIS) return;
-  try{ const r=await fetch(FONTE_COMPRAS_REAIS,{cache:'no-store'}); if(r.ok) comprasReais=[...COMPRAS_REAIS,...(await r.json())].filter(c=>c&&c.nome&&c.quando).slice(0,20); }catch(e){}
-}
 let toastTimer=null, toastIdx=0, toastMostrados=0, toastFechado=false;
 function mostrarToast(){
   if(toastFechado||tela!=='inicio'||document.hidden) return;
   if(toastMostrados>=8) return;
-  const fila=[...comprasReais.map(c=>[IC.pessoa,`${c.nome}${c.cidade?', de '+c.cidade:''}`,`garantiu o acesso vitalício ${tempoAtras(c.quando)}.`]),...avisosVerdadeiros()];
+  const fila=[...COMPRAS_REAIS.map(c=>[IC.pessoa,`${c.nome}${c.cidade?', de '+c.cidade:''}`,`garantiu o acesso vitalício ${tempoAtras(c.quando)}.`]),...avisosVerdadeiros()];
   if(!fila.length) return;
   const [ic,t,d]=fila[toastIdx%fila.length]; toastIdx++; toastMostrados++;
   let el=$('toast'); if(!el){ el=document.createElement('div'); el.id='toast'; el.className='toast'; el.setAttribute('role','status'); el.setAttribute('aria-live','polite'); document.body.appendChild(el); }
@@ -711,19 +568,16 @@ function mostrarToast(){
 function fecharToasts(){ toastFechado=true; const el=$('toast'); if(el) el.classList.remove('on'); clearInterval(toastTimer); }
 function ligarToasts(){
   if(toastTimer) return;
-  carregarComprasReais();
   setTimeout(mostrarToast,7000);
   toastTimer=setInterval(mostrarToast,22000);
 }
 
-/* ====== COMPONENTES DA PÁGINA ====== */
+/* ====== PÁGINA ====== */
 const LOGO = `<span style="width:28px;height:28px;color:var(--iris);display:inline-flex">${ARTE.balanca}</span>`;
-
 function tags(destaque){
   const ordem=Object.keys(CHIP).sort((a,b)=>(b===destaque)-(a===destaque));
   return `<div class="tags">${ordem.map(k=>`<button class="tag${k===destaque?' destaque':''}" aria-pressed="${k===destaque}" onclick="escolherProblema('${k}')">${IC[k]}${CHIP[k]}</button>`).join('')}${destaque?`<button class="tag limpar" onclick="escolherProblema(null)">Ver todos</button>`:''}</div>`;
 }
-
 function blocoCasos(lp){
   const lista=[...CASOS_REAIS].sort((a,b)=>(b.k===lp.caso)-(a.k===lp.caso));
   return lista.map(c=>`<article class="caso-real">
@@ -743,7 +597,7 @@ function telaInicio(){
   const dores=[...(lp.dores||[]),...DORES_GERAIS].slice(0,5).map(d=>`<li>${IC.nao}<span>${esc(d)}</span></li>`).join('');
   const faq=[
     ['Como eu acesso depois de comprar?','Assim que o pagamento é aprovado, a Kiwify envia para o seu e-mail o link do portal do Manual do Consumidor. É só abrir e começar, sem cadastro e sem senha, pelo celular ou computador. Salve o link nos favoritos para voltar quando quiser.'],
-    ['O que significa acesso vitalício?','Você paga uma única vez e não tem mensalidade. O acesso fica liberado na sua conta, sem prazo para acabar, enquanto o Manual do Consumidor estiver em funcionamento, incluindo as atualizações do conteúdo.'],
+    ['O que significa acesso vitalício?','Você paga uma única vez e não tem mensalidade. O acesso fica liberado, sem prazo para acabar, enquanto o Manual do Consumidor estiver em funcionamento, incluindo as atualizações do conteúdo.'],
     ['O Manual substitui um advogado?','Não. O Manual do Consumidor é um conteúdo informativo e educativo, com explicações da lei, checklists e modelos. Ele não analisa o seu caso, não avalia chances e não representa você. Quando a lei exige advogado, o manual avisa e mostra onde conseguir orientação gratuita.'],
     ['Os modelos são feitos por um advogado para o meu caso?','Não. São modelos de texto, como os formulários e cartilhas que os próprios Juizados e Procons oferecem. Você preenche com os seus dados, revisa e decide se vai usar.'],
     ['Preciso de advogado no Juizado?',`Pela Lei 9.099/95, em causas de até 20 salários mínimos (${brl(LIM20)}), não. De 20 a 40 salários mínimos (até ${brl(LIM40)}), sim. Para recorrer de uma decisão, o advogado é sempre obrigatório.`],
@@ -905,7 +759,6 @@ function telaInicio(){
 }
 
 function topo(){
-  const lp=paginaAnuncio();
   $('topo').innerHTML=`<div class="wrap barra">
     <a class="logo" href="#" onclick="tela='inicio';render();window.scrollTo(0,0);return false;">${LOGO}Manual do Consumidor</a>
     <nav class="nav" aria-label="Seções"><a class="fantasma" href="#como-funciona">Como funciona</a><a class="fantasma" href="#preco">Preço</a><a class="fantasma" href="#perguntas">Perguntas</a></nav>
@@ -914,14 +767,14 @@ function topo(){
 }
 
 function barraFixa(){
-  const b=$('barra-fixa'); const lp=paginaAnuncio();
+  const b=$('barra-fixa');
   if(tela!=='inicio'){ b.classList.remove('on'); return; }
   b.innerHTML=`<div><b>${precoAtual()} · vitalício</b>${promoAtiva()?'<span data-contagem>Preço de lançamento</span>':'Pagamento único'}</div><button class="btn assinar barra-btn" onclick="assinar()">Garantir acesso</button>`;
   const hero=$('hero'); if(!hero||!('IntersectionObserver' in window)) return;
   new IntersectionObserver(([e])=>{ const on=!e.isIntersecting; b.classList.toggle('on',on); b.setAttribute('aria-hidden',on?'false':'true'); }).observe(hero);
 }
 
-/* ====== CONSTELAÇÃO: a balança da justiça feita de pequenos triângulos dourados ====== */
+/* ====== BALANÇA DA JUSTIÇA ANIMADA ====== */
 let pararCeu=null;
 function iniciarCeu(){
   if(pararCeu){pararCeu();pararCeu=null;}
@@ -931,22 +784,19 @@ function iniciarCeu(){
   const reduz=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   let W=0,H=0,dpr=1,parts=[];
   const rnd=(a,b)=>a+Math.random()*(b-a);
-  const PIV=-0.50, BR=0.74, CAI=0.46;   // altura do eixo, meio braço, queda até o prato
+  const PIV=-0.50, BR=0.74, CAI=0.46;
   function gerar(){
     parts=[]; const f=W<600?0.8:1.35;
     const add=(o)=>parts.push(Object.assign({s:rnd(2,4.6),r:rnd(0,6.3),vr:rnd(-0.4,0.4),c:cores[(Math.random()*cores.length)|0],f:rnd(0,6.3),a:rnd(0.8,1)},o));
     const J=()=>rnd(-0.012,0.012);
-    for(let i=0;i<150*f;i++) add({t:'fixo',x:J()*1.4,y:rnd(PIV,0.66)});                       // coluna
-    for(let i=0;i<50*f;i++){const g=rnd(0,6.3);add({t:'fixo',x:Math.cos(g)*0.055+J()*.3,y:PIV-0.12+Math.sin(g)*0.055});} // remate
-    for(let i=0;i<170*f;i++) add({t:'viga',lx:rnd(-BR,BR),ly:J()});                               // braço
+    for(let i=0;i<150*f;i++) add({t:'fixo',x:J()*1.4,y:rnd(PIV,0.66)});
+    for(let i=0;i<50*f;i++){const g=rnd(0,6.3);add({t:'fixo',x:Math.cos(g)*0.055+J()*.3,y:PIV-0.12+Math.sin(g)*0.055});}
+    for(let i=0;i<170*f;i++) add({t:'viga',lx:rnd(-BR,BR),ly:J()});
     for(const lado of [-1,1]){
-      for(let i=0;i<140*f;i++){const k=Math.random(), q=Math.random()<.5?-1:1;               // correntes
-        add({t:'pend',lado,dx:q*0.2*k+J(),dy:CAI*k});}
-      for(let i=0;i<170*f;i++){const g=rnd(0,Math.PI);                                           // prato
-        const borda=Math.random()<.35; add({t:'pend',lado,dx:(borda?rnd(-0.22,0.22):Math.cos(g)*0.22)+J(),dy:CAI+(borda?J():Math.sin(g)*0.1)});}
+      for(let i=0;i<140*f;i++){const k=Math.random(), q=Math.random()<.5?-1:1; add({t:'pend',lado,dx:q*0.2*k+J(),dy:CAI*k});}
+      for(let i=0;i<170*f;i++){const g=rnd(0,Math.PI); const borda=Math.random()<.35; add({t:'pend',lado,dx:(borda?rnd(-0.22,0.22):Math.cos(g)*0.22)+J(),dy:CAI+(borda?J():Math.sin(g)*0.1)});}
     }
-    for(let i=0;i<150*f;i++){const k=Math.random();                                             // base
-      const lin=Math.random(); let x,y;
+    for(let i=0;i<150*f;i++){const k=Math.random(); const lin=Math.random(); let x,y;
       if(lin<.4){x=rnd(-0.34,0.34);y=0.78;} else if(lin<.7){x=rnd(-0.2,0.2);y=0.68;} else {const q=Math.random()<.5?-1:1; x=q*(0.2+0.14*k); y=0.68+0.1*k;}
       add({t:'fixo',x:x+J(),y:y+J()});}
     const A=W<600?50:110;
